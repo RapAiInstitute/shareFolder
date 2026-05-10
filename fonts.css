@@ -1,0 +1,124 @@
+/**
+ * ملف الخطوط المحلية - Offline Fonts
+ * الأكاديمية الملكية للشرطة - مملكة البحرين
+ * 
+ * هذا الملف يحتوي على تعريفات الخطوط العربية (Cairo و Tajawal)
+ * للاستخدام بدون إنترنت على الشبكة الداخلية
+ */
+
+/* ========================================
+   Cairo Font Family
+   ======================================== */
+
+/* Cairo Light (300) */
+@font-face {
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('Cairo-Light.woff2') format('woff2'),
+         url('Cairo-Light.woff') format('woff');
+}
+
+/* Cairo Regular (400) */
+@font-face {
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('Cairo-Regular.woff2') format('woff2'),
+         url('Cairo-Regular.woff') format('woff');
+}
+
+/* Cairo SemiBold (600) */
+@font-face {
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('Cairo-SemiBold.woff2') format('woff2'),
+         url('Cairo-SemiBold.woff') format('woff');
+}
+
+/* Cairo Bold (700) */
+@font-face {
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('Cairo-Bold.woff2') format('woff2'),
+         url('Cairo-Bold.woff') format('woff');
+}
+
+/* Cairo Black (900) */
+@font-face {
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('Cairo-Black.woff2') format('woff2'),
+         url('Cairo-Black.woff') format('woff');
+}
+
+/* ========================================
+   Tajawal Font Family
+   ======================================== */
+
+/* Tajawal Light (300) */
+@font-face {
+    font-family: 'Tajawal';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('Tajawal-Light.woff2') format('woff2'),
+         url('Tajawal-Light.woff') format('woff');
+}
+
+/* Tajawal Regular (400) */
+@font-face {
+    font-family: 'Tajawal';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('Tajawal-Regular.woff2') format('woff2'),
+         url('Tajawal-Regular.woff') format('woff');
+}
+
+/* Tajawal Medium (500) */
+@font-face {
+    font-family: 'Tajawal';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('Tajawal-Medium.woff2') format('woff2'),
+         url('Tajawal-Medium.woff') format('woff');
+}
+
+/* Tajawal Bold (700) */
+@font-face {
+    font-family: 'Tajawal';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('Tajawal-Bold.woff2') format('woff2'),
+         url('Tajawal-Bold.woff') format('woff');
+}
+
+/* Tajawal ExtraBold (900) */
+@font-face {
+    font-family: 'Tajawal';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('Tajawal-ExtraBold.woff2') format('woff2'),
+         url('Tajawal-ExtraBold.woff') format('woff');
+}
+
+/* ========================================
+   Fallback Fonts
+   ======================================== */
+
+/* 
+   في حال عدم توفر الخطوط المحلية، 
+   سيتم استخدام خطوط النظام العربية كبديل
+*/

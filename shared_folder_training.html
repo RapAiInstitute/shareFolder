@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المرجع التفاعلي - المجلد الإلكتروني المشترك | الأكاديمية الملكية للشرطة</title>
+
+    <!-- Local Fonts - الخطوط المحلية -->
+    <link rel="stylesheet" href="fonts/fonts.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --royal-blue: #0a1e42;
+            --gold: #d4a855;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+            --info: #3498db;
+            --light-bg: #f8f9fa;
+            --dark-bg: #1a1a2e;
+            --text-primary: #2c3e50;
+            --text-secondary: #7f8c8d;
+            --border-color: #e0e0e0;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Tajawal', 'Cairo', 'Simplified Arabic', 'Traditional Arabic', 'Segoe UI', Tahoma, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--royal-blue) 0%, #1a3a6b 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            background-image: url('rap1.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .header-title h1 {
+            font-family: 'Cairo', 'Tajawal', 'Simplified Arabic', 'Segoe UI', Tahoma, Arial, sans-serif;
+            font-weight: 400;
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-title p {
+            color: var(--gold);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Landing Section */
+        .landing {
+            background: linear-gradient(135deg, rgba(10, 30, 66, 0.95) 0%, rgba(26, 58, 107, 0.95) 100%), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(212,168,85,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+            padding: 6rem 2rem;
+            text-align: center;
+            color: white;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .landing-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .landing h2 {
+            font-family: 'Cairo', 'Tajawal', 'Simplified Arabic', 'Segoe UI', Tahoma, Arial, sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, white 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .landing-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .landing-description {
+            font-size: 1.2rem;
+            line-height: 2;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.8);
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--gold) 0%, #b8941f 100%);
+            color: var(--royal-blue);
+            border: none;
+            padding: 1.2rem 3rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(212, 168, 85, 0.4);
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+            font-family: 'Cairo', 'Tajawal', 'Simplified Arabic', 'Segoe UI', Tahoma, Arial, sans-serif;
+        }
+
+            .cta-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 12px 35px rgba(212, 168, 85, 0.5);
+            }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+            position: sticky;
+            top: 120px;
+            z-index: 100;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .progress-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--royal-blue);
+        }
+
+        .progress-percentage {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--gold);
+        }
+
+        .progress-bar {
+            height: 15px;
+            background: var(--light-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold) 0%, #b8941f 100%);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+            box-shadow: 0 2px 10px rgba(212, 168, 85, 0.3);
+        }
+
+        /* Section Styles */
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-right: 5px solid var(--gold);
+        }
+
+            .section:hover {
+                box-shadow: var(--shadow-hover);
+                transform: translateY(-2px);
+            }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .section-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--royal-blue) 0%, #2c4a7c 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 4px 15px rgba(10, 30, 66, 0.3);
+        }
+
+        .section-title-group h2 {
+            font-family: 'Cairo', 'Tajawal', 'Simplified Arabic', 'Segoe UI', Tahoma, Arial, sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--royal-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .toggle-icon {
+            margin-right: auto;
+            font-size: 1.5rem;
+            color: var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .section.active .section-content {
+            max-height: 10000px;
+        }
+
+        .section.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Content Typography */
+        .section-content h3 {
+            color: var(--royal-blue);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .section-content h4 {
+            color: var(--info);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .section-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 2;
+        }
+
+        .section-content ul, .section-content ol {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+
+        .section-content li {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-right: 5px solid;
+            font-size: 1.1rem;
+        }
+
+        .alert-info {
+            background: rgba(52, 152, 219, 0.1);
+            border-color: var(--info);
+            color: #2980b9;
+        }
+
+        .alert-success {
+            background: rgba(46, 204, 113, 0.1);
+            border-color: var(--success);
+            color: #27ae60;
+        }
+
+        .alert-warning {
+            background: rgba(243, 156, 18, 0.1);
+            border-color: var(--warning);
+            color: #d68910;
+        }
+
+        .alert-danger {
+            background: rgba(231, 76, 60, 0.1);
+            border-color: var(--danger);
+            color: #c0392b;
+        }
+
+        .alert-title {
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Example Cards */
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .example-card {
+            background: var(--light-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+            .example-card:hover {
+                border-color: var(--gold);
+                transform: translateY(-3px);
+                box-shadow: var(--shadow);
+            }
+
+            .example-card.correct {
+                border-color: var(--success);
+                background: rgba(46, 204, 113, 0.05);
+            }
+
+            .example-card.wrong {
+                border-color: var(--danger);
+                background: rgba(231, 76, 60, 0.05);
+            }
+
+        .example-label {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .label-correct {
+            background: var(--success);
+            color: white;
+        }
+
+        .label-wrong {
+            background: var(--danger);
+            color: white;
+        }
+
+        .example-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Interactive Quiz */
+        .quiz-container {
+            background: linear-gradient(135deg, rgba(10, 30, 66, 0.05) 0%, rgba(212, 168, 85, 0.05) 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .quiz-question {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .question-number {
+            background: var(--royal-blue);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-left: 1rem;
+        }
+
+        .question-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--royal-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .quiz-option {
+            background: var(--light-bg);
+            padding: 1.2rem 1.5rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            font-size: 1.1rem;
+        }
+
+            .quiz-option:hover {
+                background: rgba(212, 168, 85, 0.1);
+                border-color: var(--gold);
+            }
+
+            .quiz-option.selected {
+                background: rgba(10, 30, 66, 0.1);
+                border-color: var(--royal-blue);
+            }
+
+            .quiz-option.correct {
+                background: rgba(46, 204, 113, 0.2);
+                border-color: var(--success);
+            }
+
+            .quiz-option.wrong {
+                background: rgba(231, 76, 60, 0.2);
+                border-color: var(--danger);
+            }
+
+        .quiz-submit {
+            background: linear-gradient(135deg, var(--royal-blue) 0%, #2c4a7c 100%);
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+            box-shadow: 0 4px 15px rgba(10, 30, 66, 0.3);
+        }
+
+            .quiz-submit:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(10, 30, 66, 0.4);
+            }
+
+        .quiz-result {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+
+        .result-score {
+            font-size: 5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--gold) 0%, #b8941f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .result-message {
+            font-size: 1.5rem;
+            color: var(--royal-blue);
+            margin-bottom: 2rem;
+        }
+
+        /* Certificate */
+        .certificate {
+            background: linear-gradient(135deg, white 0%, rgba(212, 168, 85, 0.1) 100%);
+            border: 10px solid var(--gold);
+            border-radius: 20px;
+            padding: 4rem;
+            text-align: center;
+            margin: 3rem 0;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+            .certificate::before {
+                content: '';
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                bottom: 20px;
+                left: 20px;
+                border: 2px solid var(--gold);
+                border-radius: 10px;
+            }
+
+        .certificate-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .certificate-title {
+            font-family: 'Cairo', 'Tajawal', 'Simplified Arabic', 'Segoe UI', Tahoma, Arial, sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--royal-blue);
+            margin-bottom: 2rem;
+        }
+
+        .certificate-text {
+            font-size: 1.5rem;
+            line-height: 2;
+            margin-bottom: 2rem;
+        }
+
+        .certificate-name {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--gold);
+            margin: 2rem 0;
+        }
+
+        /* Resources Section */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .resource-card {
+            background: linear-gradient(135deg, var(--royal-blue) 0%, #2c4a7c 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+            .resource-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(10, 30, 66, 0.4);
+            }
+
+        .resource-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .resource-description {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .nav-button {
+            flex: 1;
+            background: white;
+            border: 2px solid var(--gold);
+            color: var(--royal-blue);
+            padding: 1.2rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+            .nav-button:hover {
+                background: var(--gold);
+                color: white;
+                transform: translateY(-2px);
+            }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--royal-blue) 0%, #1a3a6b 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+            .footer-link:hover {
+                opacity: 0.8;
+            }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .header, .progress-container, .nav-buttons, .footer, .cta-button {
+                display: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+                box-shadow: none;
+            }
+
+            .section-content {
+                max-height: none !important;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .landing h2 {
+                font-size: 2.5rem;
+            }
+
+            .landing-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 2rem;
+            }
+
+            .section-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .section-title-group h2 {
+                font-size: 1.5rem;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-4 {
+            margin-top: 4rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 4rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo"></div>
+                <div class="header-title">
+                    <h1>الأكاديمية الملكية للشرطة</h1>
+                    <p>فرع تقنية المعلومات والدعم الفني</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Landing Section -->
+    <section class="landing" id="landing">
+        <div class="landing-content">
+            <h2>المرجع التفاعلي الشامل</h2>
+            <p class="landing-subtitle">المجلد الإلكتروني المشترك (Share Folder)</p>
+            <p class="landing-description">
+                دليلك الكامل لفهم وتطبيق تعليمات استخدام المجلد الإلكتروني المشترك<br>
+                بطريقة تفاعلية وعملية مع أمثلة حية واختبارات تقييمية
+            </p>
+            <button class="cta-button" onclick="startLearning()">🚀 ابدأ التعلم الآن</button>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">أقسام رئيسية</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">18</div>
+                    <div class="stat-label">كيان مشارك</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">سؤال تقييمي</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">تفاعلي</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container" id="mainContent" style="display: none;">
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-header">
+                <span class="progress-title">📊 تقدمك في المحتوى</span>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <span class="progress-percentage" id="progressPercentage">0%</span>
+                    <button onclick="resetProgress()" style="background: transparent; border: 2px solid var(--gold); color: var(--gold); padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; font-size: 0.9rem; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='var(--gold)'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='var(--gold)';" title="مسح التقدم والبدء من جديد">🔄 إعادة</button>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <!-- Section 1: Introduction -->
+        <section class="section active" data-section="1">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-icon">📚</div>
+                <div class="section-title-group">
+                    <h2>المقدمة: ما هو المجلد الإلكتروني المشترك؟</h2>
+                    <p class="section-subtitle">فهم الغرض والأهمية</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h3>🎯 التعريف والغرض</h3>
+                <p>
+                    <strong>المجلد الإلكتروني المشترك (Share Folder)</strong> هو مجلد إلكتروني يُستخدم لتبادل الملفات والمستندات ومشاركتها بين منتسبي الكيان الواحد، وكذلك بين مختلف كيانات الأكاديمية الملكية للشرطة، بما يسهم في تسهيل الوصول إلى الملفات وتنظيم عملية تبادل المعلومات إلكترونياً.
+
+
+                </p>
+
+                <div class="alert alert-info">
+                    <div class="alert-title">💡 تشبيه بسيط</div>
+                    تخيل المجلد المشترك كمحطة بريد مركزية - يمكنك إرسال واستقبال الطرود (الملفات)، لكن لا يمكنك تخزين أمتعتك الشخصية فيها بشكل دائم!
+                </div>
+
+                <h3>✨ الوظائف الأساسية</h3>
+                <ul>
+                    <li><strong>نقل الملفات:</strong> تبادل المستندات بين الأقسام والكيانات المختلفة</li>
+                    <li><strong>التعاون:</strong> تسهيل نقل الملفات الضرورية بين منتسبي الكيان وبين الكيانات المختلفة في الأكاديمية</li>
+                    <li><strong>التنظيم:</strong> هيكل واضح ومنظم لحفظ وتصنيف الملفات الخاصة بكل كيان</li>
+                    <li><strong>سهولة الوصول:</strong> إمكانية الوصول إلى الملفات المشتركة بسرعة وفق الصلاحيات الممنوحة</li>
+                    <li><strong>تقليل استخدام الورق:</strong> دعم التحول الرقمي وتقليل الاعتماد على المستندات الورقية</li>
+                    <li><strong>رفع كفاءة العمل:</strong> تسريع تبادل المعلومات وتقليل الوقت المستغرق في مشاركة الملفات</li>
+                    <li><strong>دعم العمل الجماعي:</strong> تعزيز التعاون بين الأقسام والكيانات المختلفة داخل الأكاديمية</li>
+                </ul>
+
+                <h3>🏢 الكيانات المشاركة (18 كياناً)</h3>
+
+                <div class="entities-grid">
+
+                    <div class="entity-card">
+                        <ul>
+                            <li>مكتب سعادة آمر الأكاديمية الملكية للشرطة</li>
+                            <li>قيادة الأكاديمية الملكية للشرطة</li>
+                            <li>إدارة الشؤون الإدارية</li>
+                            <li>إدارة القبول والتسجيل</li>
+                            <li>الكلية الملكية للشرطة</li>
+                            <li>مركز البحوث الأمنية</li>
+                            <li>معهد تدريب الشرطة</li>
+                        </ul>
+                    </div>
+
+                    <div class="entity-card">
+                        <ul>
+                            <li>كلية تدريب الضباط</li>
+                            <li>شعبة التعليم</li>
+                            <li>شعبة التدريب</li>
+                            <li>فرع تقنية المعلومات والدعم الفني</li>
+                            <li>فريق التعليم والتدريب الإلكتروني</li>
+                            <li>ممثل الجودة</li>
+                        </ul>
+                    </div>
+
+                    <div class="entity-card">
+                        <ul>
+                            <li>معهد نظم المعلومات الأمنية وتطبيقات الذكاء الاصطناعي</li>
+                            <li>معهد نظم المعلومات الجغرافية الأمنية</li>
+                            <li>ممثل التدريب</li>
+                            <li>فريق السلامة الصحية والمهنية</li>
+                            <li class="highlight alert alert-info">المجلد العام</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <style>
+                    .entities-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                        gap: 20px;
+                        margin-top: 20px;
+                    }
+
+                    .entity-card {
+                        background: #ffffff;
+                        border-radius: 16px;
+                        padding: 20px;
+                        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+                        border-right: 5px solid #0d6efd;
+                        transition: 0.3s ease;
+                    }
+
+                        .entity-card:hover {
+                            transform: translateY(-4px);
+                            box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+                        }
+
+                        .entity-card ul {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                            text-align: right;
+                        }
+
+                        .entity-card li {
+                            padding: 10px 0;
+                            border-bottom: 1px solid #eee;
+                            font-size: 15px;
+                            line-height: 1.8;
+                        }
+
+                            .entity-card li:last-child {
+                                border-bottom: none;
+                            }
+
+                    .highlight {
+                        font-weight: bold;
+                        color: #0d6efd;
+                    }
+                </style>
+
+                <div class="alert alert-danger">
+                    <div class="alert-title">⚠️ انتبه</div>
+                    المجلد المشترك <strong>ليس</strong> للتخزين الدائم - إنما محطة انتقال مؤقتة للملفات!
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Critical Instructions -->
+        <section class="section" data-section="2">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-icon">🔐</div>
+                <div class="section-title-group">
+                    <h2>التعليمات</h2>
+                    <p class="section-subtitle">القواعد الستة الأساسية الواجب الالتزام بها</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h3>📋 التعليمة الأولى: منع الاحتفاظ بملفات لا تخص العمل</h3>
+                <div class="alert alert-danger">
+                    <div class="alert-title">🚫 ممنوع منعاً باتاً</div>
+                    <p>يمنع الاحتفاظ بالملفات التي تحتوي على بيانات لا تخص العمل. استخدام هذه المجلدات لغايات نقل الملفات الإلكترونية بين المستخدمين المصرح لهم بالدخول إلى مجلد المشاركة الخاص بالكيان فقط.</p>
+                </div>
+
+                <h4>🎯 ما المسموح وما الممنوع؟</h4>
+                <div class="example-grid">
+                    <div class="example-card correct">
+                        <span class="example-label label-correct">✅ صحيح</span>
+                        <div class="example-content">
+                            <strong>مثال:</strong> نقل تقرير شهري من شعبة التعليم إلى مكتب الأمر
+                        </div>
+                    </div>
+                    <div class="example-card correct">
+                        <span class="example-label label-correct">✅ صحيح</span>
+                        <div class="example-content">
+                            <strong>مثال:</strong> مشاركة جدول تدريبي  بين كيان وكيان آخر.
+                        </div>
+                    </div>
+                    <div class="example-card wrong">
+                        <span class="example-label label-wrong">❌ خطأ</span>
+                        <div class="example-content">
+                            <strong>مثال:</strong> حفظ صور شخصية أو فيديوهات في المجلد المشترك
+                        </div>
+                    </div>
+                    <div class="example-card wrong">
+                        <span class="example-label label-wrong">❌ خطأ</span>
+                        <div class="example-content">
+                            <strong>مثال:</strong> استخدام المجلد لتخزين ملفات موسيقى أو برامج شخصية
+                        </div>
+                    </div>
+                </div>
+
+                <h3>💾 التعليمة الثانية: عدم استخدام المجلد لحفظ البيانات</h3>
+                <p><strong>المبدأ الأساسي:</strong> المجلد المشترك = محطة عبور، ليس مستودع تخزين!</p>
+
+                <div class="alert alert-info">
+                    <div class="alert-title">📝 السيناريو الصحيح</div>
+                    <ol>
+                        <li>إنهاء العمل على الملف في جهازك الشخصي</li>
+                        <li>نسخ الملف إلى المجلد المشترك</li>
+                        <li>إعلام المستلم بوجود الملف</li>
+                        <li><strong>بعد التأكد من الاستلام → حذف الملف فوراً</strong></li>
+                        <li>الاحتفاظ بالنسخة الأصلية في جهازك </li>
+                    </ol>
+                </div>
+
+                <h4>⏱️ القاعدة الذهبية</h4>
+                <div class="alert alert-success">
+                    <div class="alert-title">💡 نصيحة مهمة</div>
+                    <strong>لا تترك ملفاً في المجلد المشترك لأكثر من 7 أيام بدون سبب !</strong><br>
+                    الملفات المتروكة أكثر من 30 يوماً قد تُحذف تلقائياً.
+                </div>
+
+                <h3>🔒 التعليمة الثالثة: التعامل مع البيانات السرية والحساسة</h3>
+                <h4>ما هي البيانات السرية/الحساسة؟</h4>
+                <ul>
+                    <li>🆔 بيانات شخصية (أرقام هويات، عناوين، أرقام هواتف)</li>
+                    <li>🔴 معلومات مصنفة "سري" أو "سري للغاية"</li>
+                    <li>📊 تقارير احتياطية من الملفات العامة</li>
+
+                </ul>
+
+                <div class="alert alert-danger">
+                    <div class="alert-title">🔐 القاعدة الإلزامية</div>
+                    <strong>تشفير + توثيق + إعلام المستلم</strong>
+                </div>
+
+                <h4>📋 خطوات العمل الآمنة</h4>
+                <ol>
+                    <li><strong>الحماية:</strong> دعم حماية الملفات الحساسة عبر وضع كلمات مرور على ملفات (Word وExcel وPDF) لتعزيز أمن المعلومات وسرية المحتوى</li>
+                    <li><strong>الرفع:</strong> وضع الملف المحمي في المجلد المشترك</li>
+                    <li><strong>المشاركة الآمنة:</strong> إعلام (المستلم/المستفيد) بمكان الملف المحمي وبكلمة السر.</li>
+                    <li><strong>التأكيد:</strong> التأكد من استلام المستلم للملف بنجاح</li>
+                    <li><strong>الحذف الفوري:</strong> حذف الملف من المجلد المشترك فوراً بعد التأكيد</li>
+                </ol>
+
+                <div class="alert alert-info">
+                    <div class="alert-title">🔐 كيف أحمي ملفات Word وExcel وPDF بكلمة مرور؟</div>
+                    <p>للحصول على دليل تفصيلي خطوة بخطوة مع رسومات توضيحية لحماية الملفات بكلمات مرور، راجع <strong><a href="password_protection_guide.html" style="color: var(--gold); text-decoration: underline; font-weight: 700;">دليل حماية الملفات بكلمات المرور</a></strong></p>
+                </div>
+
+                <!--<h3>🔑 التعليمة الرابعة: المعلومات ذات طابع سري</h3>
+                <div class="alert alert-warning">
+                    <div class="alert-title">⚠️ ملاحظة مهمة</div>
+                    <p>في حال كانت المعلومات ذات طابع سري أو حساس - يمكن استخدام أو مشاركة الملفات (<strong>للعرض فقط أو للتوجيه</strong>) حسب درجة التخويل والمصداقية عن طريق نظام الأرشيف والمراسلات الإلكترونية كوسيلة إضافية لتبادل المعلومات.</p>
+                </div>
+
+                <h4>🤔 كيف تعرف أن المعلومة سرية؟</h4>
+                <ul>
+                    <li>✓ مختومة بختم "سري" أو "سري للغاية"</li>
+                    <li>✓ تتعلق بقضايا أمنية أو شرطية</li>
+                    <li>✓ بيانات شخصية حساسة لمواطنين أو مقيمين</li>
+                    <li>✓ معلومات تحقيقات أو قضايا قضائية</li>
+                </ul>
+
+                <div class="alert alert-info">
+                    <div class="alert-title">💭 القاعدة الذهبية</div>
+                    <strong>عند الشك - اسأل مديرك المباشر!</strong>
+                </div>-->
+
+                <h3>🛡️ التعليمة الرابعة: مسؤولية سلامة الأجهزة والبيانات</h3>
+                <p><strong>المبدأ:</strong> أنت مسؤول عن سلامة جهازك وبياناته - المجلد المشترك ليس بديلاً للنسخ الاحتياطي!</p>
+
+                <h4>مسؤولياتك:</h4>
+                <ul>
+                    <li>✅ عمل نسخ احتياطية دورية (Backup) لملفاتك وبياناتك.</li>
+                    <li>✅ حماية جهازك بكلمات مرور قوية</li>
+                    <li>✅ فحص الملفات قبل رفعها</li>
+                    <li>✅ عدم الاعتماد على المجلد المسترك كمخزن </li>
+                </ul>
+
+
+                <h3>👥 التعليمة الخامسة: مبدأ "Need To Know"</h3>
+                <p><strong>سكون الدخول واستخدام المجلد المشترك حسب المخولين:</strong> المستخدمين الذين سيتم ترشيحهم من كل إدارة حسب المند (ب) من الفقرة رقم (1) بآلية الذكر، وذلك لضبط عمليه الدخول وتداول تلك المعلومات والبيانات وتطبيق مبدأ المعرفة على قدر الحاجة (Need To Know).</p>
+
+                <h4>📌 المفهوم</h4>
+                <div class="alert alert-info">
+                    <div class="alert-title">💡 التعريف</div>
+                    <strong>Need To Know =</strong> فقط من يحتاج المعلومة لأداء عمله يحصل عليها
+                </div>
+
+                <h4>🎯 التطبيق العملي</h4>
+                <div class="example-grid">
+                    <div class="example-card correct">
+                        <span class="example-label label-correct">✅ صحيح</span>
+                        <div class="example-content">
+                            موظف في في الشؤون الإدارية يصل لملفات المتأخرين من الكيانات - لأنه يحتاجها لعمله
+                        </div>
+                    </div>
+                    <div class="example-card wrong">
+                        <span class="example-label label-wrong">❌ خطأ</span>
+                        <div class="example-content">
+                            موظف في شعبة التعليم يطلع على ملفات المتأخرين من الكيانات - لا علاقة بعمله
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Practical Procedures -->
+        <section class="section" data-section="3">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-icon">🔧</div>
+                <div class="section-title-group">
+                    <h2>الإجراءات العملية</h2>
+                    <p class="section-subtitle">كيفية استخدام المجلد خطوة بخطوة</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h3>📤 السيناريو الأول: نقل ملف من قسمي إلى قسم آخر</h3>
+
+                <div class="alert alert-info">
+                    <div class="alert-title">📝 الخطوات التفصيلية</div>
+                    <ol style="line-height: 2.5;">
+                        <li>
+                            <strong>الخطوة 1 - التجهيز:</strong>
+                            <ul>
+                                <li>✓ التأكد من اكتمال محتوى الملف</li>
+                                <li>✓ تسمية واضحة (مثال: تقرير_المتأخرين_ابريل2026.pdf)</li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>الخطوة 2 - الوصول:</strong>
+                            <ul>
+                                <li>✓ فتح المجلد من الشبكة: \\10.160.64.2\share</li>
+                                <li>✓ اختيار المجلد الفرعي المناسب للكيان المستهدف</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>الخطوة 3 - النسخ:</strong>
+                            <ul>
+                                <li>✓ نسخ الملف (Copy) وليس نقله (Move)</li>
+                                <li>✓ عدم حذف النسخة الأصلية من جهازك</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>الخطوة 4 - الإعلام:</strong>
+                            <ul>
+                                <li>✓ إخبار المستلم (هاتف/بريد/واتساب )</li>
+                                <li>✓ ذكر اسم الملف وموقعه بالضبط</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>الخطوة 5 - المتابعة:</strong>
+                            <ul>
+                                <li>✓ انتظار تأكيد الاستلام</li>
+                                <li>✓ حذف الملف من المجلد المشترك فوراً</li>
+
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>📥 السيناريو الثاني: استلام ملف من قسم آخر</h3>
+
+                <div class="alert alert-success">
+                    <div class="alert-title">📝 الخطوات التفصيلية</div>
+                    <ol style="line-height: 2.5;">
+                        <li>
+                            <strong>الخطوة 1 - الاستلام:</strong>
+                            <ul>
+                                <li>✓ فتح المجلد المشترك</li>
+                                <li>✓ البحث عن الملف المطلوب في المجلد المناسب</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>الخطوة 2 - النسخ:</strong>
+                            <ul>
+                                <li>✓ نسخ (Copy) الملف إلى موقع آمن في جهازك</li>
+                                <li>✓ <strong>عدم فتحه مباشرة من المجلد المشترك</strong></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>الخطوة 3 - الإعلام:</strong>
+                            <ul>
+                                <li>✓ إخبار المرسل باستلام الملف بنجاح</li>
+                                <li>✓ طلب حذف الملف من المجلد المشترك</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>📁 هيكل المجلدات</h3>
+                <div class="alert alert-info">
+                    <div class="alert-title">🗂️ البنية التنظيمية</div>
+                    <pre style="background: white; padding: 1.5rem; border-radius: 10px; overflow-x: auto; direction: ltr; text-align: left;">
+📁 المجلد المشترك الرئيسي (Shared Folder)
+├── 📁 مكتب_الامر
+├── 📁 قيادة_الاكاديمية
+├── 📁 الشؤون_الادارية
+├── 📁 القبول_والتسجيل
+├── 📁 الكلية_الملكية
+├── 📁 مركز_البحوث_الامنية
+├── 📁 معهد_تدريب_الشرطة
+├── 📁 كلية_تدريب_الضباط
+├── 📁 شعبة_التعليم
+├── 📁 شعبة_التدريب
+├── 📁 فرع_تقنية_المعلومات
+├── 📁 فريق_التعليم_التدريب_الالكتروني
+├── 📁 معهد_نظم_المعلومات_الامنية
+├── 📁 معهد_المعلومات_الجغرافية
+├── 📁 ممثل_الجودة
+├── 📁 ممثل_التدريب
+├── 📁 فريق_السلامة_الصحية
+└── 📁 المجلد_العام (للجميع)
+                    </pre>
+                </div>
+
+                <h4>📋 قواعد الهيكل</h4>
+                <ul>
+                    <li>✓ كل كيان له مجلد خاص باسمه</li>
+                    <li>✓ المجلد العام  للملفات المشتركة بين الجميع</li>
+                    <li>✓ لن تستطيع أن تضع ملفات في مجلد كيان آخر إلا بإذن رسمي</li>
+                    <li>✓ يمكن إنشاء مجلدات فرعية داخل مجلد كيانك للتنظيم</li>
+                </ul>
+
+                <!--<h3>🔄 التعامل مع الملفات الكبيرة</h3>
+                <div class="alert alert-warning">
+                    <div class="alert-title">⚠️ ملاحظة مهمة</div>
+                    <p>للملفات الكبيرة جداً (أكثر من 500 ميجابايت):</p>
+                    <ul>
+                        <li>✓ اتصل بفريق تقنية المعلومات</li>
+                        <li>✓ استخدم خدمات النقل المعتمدة البديلة</li>
+                        <li>✓ ضغط الملفات عند الإمكان (بدون كلمة مرور للملفات العادية)</li>
+                    </ul>
+                </div>-->
+            </div>
+        </section>
+
+        <!-- Section 4: Timeline & Responsibility -->
+        <section class="section" data-section="4">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-icon">📅</div>
+                <div class="section-title-group">
+                    <h2>الجدول الزمني والمسؤوليات</h2>
+                    <p class="section-subtitle">خطة التنفيذ والفريق المسؤول</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <h3>⏱️ الجدول الزمني للتنفيذ</h3>
+
+                <div class="example-grid">
+                    <div class="example-card">
+                        <div class="example-label label-correct">المرحلة الأولى</div>
+                        <div class="example-content">
+                            <strong>الأسبوع 1-2:</strong><br>
+                            ✓ إنشاء المجلدات الإلكترونية<br>
+                            ✓ تجهيز البنية التحتية<br>
+                            ✓ ضبط الصلاحيات
+                        </div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-label label-correct">المرحلة الثانية</div>
+                        <div class="example-content">
+                            <strong>الأسبوع 3:</strong><br>
+                            ✓ تقديم المحاضرات التوعوية<br>
+                            ✓ توزيع الدليل الإرشادي<br>
+                            ✓ التدريب العملي
+                        </div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-label label-correct">المرحلة الثالثة</div>
+                        <div class="example-content">
+                            <strong>30 يوماً من التعميم:</strong><br>
+                            ✓ نقل الملفات القديمة<br>
+                            ✓ تنظيف المجلدات<br>
+                            ✓ الأرشفة النهائية
+                        </div>
+                    </div>
+                </div>
+
+                <!--<h3>👥 الفريق المسؤول</h3>
+
+                <div class="alert alert-info">
+                    <div class="alert-title">🎯 المسؤوليات</div>
+
+                    <h4>1️⃣ الضابط المرجع لفرع تقنية المعلومات والدعم التقني</h4>
+                    <ul>
+                        <li>الإشراف العام على المجلد المشترك</li>
+                        <li>حل المشكلات التقنية</li>
+                        <li>إدارة الصلاحيات والوصول</li>
+                    </ul>
+
+                    <h4>2️⃣ الضابط المرجع لمعهد نظم المعلومات الأمنية</h4>
+                    <ul>
+                        <li>التأكد من الالتزام بالمعايير الأمنية</li>
+                        <li>مراقبة حركة الملفات</li>
+                        <li>التدقيق الأمني الدوري</li>
+                    </ul>
+
+                    <h4>3️⃣ الضابط المرجع لمعهد نظم المعلومات الأمنية + تطبيقات الذكاء الاصطناعي</h4>
+                    <ul>
+                        <li>المتابعة الفنية والتطبيقية</li>
+                        <li>التطوير والتحسين المستمر</li>
+                        <li>التدريب والدعم</li>
+                    </ul>
+                </div>-->
+                <!--<h3>⚖️ الإجراءات الانضباطية</h3>
+
+                <div class="alert alert-danger">
+                    <div class="alert-title">⚠️ في حال المخالفة</div>
+
+                    <h4>المستوى الأول - المخالفة الأولى:</h4>
+                    <p>📝 تحذير شفهي + توجيه إرشادي</p>
+
+                    <h4>المستوى الثاني - المخالفة الثانية:</h4>
+                    <p>📄 إنذار كتابي + حجب الصلاحية مؤقتاً (7 أيام)</p>
+
+                    <h4>المستوى الثالث - المخالفة المتكررة:</h4>
+                    <p>⚖️ إجراءات إدارية وقانونية وفقاً للأنظمة والقوانين</p>
+                </div>-->
+                <!--<h4>📋 أمثلة على المخالفات</h4>
+                <ul>
+                    <li>❌ وضع ملفات شخصية أو ترفيهية</li>
+                    <li>❌ عدم حذف الملفات القديمة</li>
+                    <li>❌ مشاركة معلومات سرية بدون تشفير</li>
+                    <li>❌ السماح لغير المخولين بالوصول</li>
+                    <li>❌ استخدام المجلد كمستودع تخزين دائم</li>
+                </ul>-->
+            </div>
+        </section>
+
+        <!-- Section 5: FAQ -->
+        <section class="section" data-section="5">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-icon">❓</div>
+                <div class="section-title-group">
+                    <h2>الأسئلة الشائعة</h2>
+                    <p class="section-subtitle">إجابات على أكثر الأسئلة تكراراً</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="example-grid">
+                    <div class="example-card">
+                        <h4>❓ س1: ماذا لو احتجت لمشاركة ملف كبير جداً (أكثر من 500 ميجا)؟</h4>
+                        <p><strong>✅ الجواب:</strong> استخدم خدمات النقل المعتمدة أو اتصل بفرع تقنية المعلومات والدعم الفني لترتيب بديل آمن.</p>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>❓ س2: هل يمكنني إنشاء مجلدات فرعية داخل مجلد قسمي؟</h4>
+                        <p><strong>✅ الجواب:</strong> نعم، يمكنك تنظيم ملفاتك بمجلدات فرعية - لكن تبقى القواعد الأمنية سارية.</p>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>❓ س3: كم المدة المسموح بها لبقاء الملف في المجلد؟</h4>
+                        <p><strong>✅ الجواب:</strong> لا توجد مدة محددة رسمياً، لكن القاعدة: <strong>بعد التأكد من الاستلام → احذف فوراً</strong>. الملفات المتروكة أكثر من 30 يوماً قد تُحذف تلقائياً.</p>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>❓ س4: ماذا لو حُذف ملفي بالخطأ؟</h4>
+                        <p><strong>✅ الجواب:</strong> المجلد المشترك ليس مخزناً دائماً - يجب أن يكون لديك نسخة احتياطية دائماً في نظام الأرشفة أو جهازك. لا يمكن استرجاع الملفات المحذوفة.</p>
+                    </div>
+
+
+
+                    <div class="example-card">
+                        <h4>❓ س5: كيف أتعامل مع ملف Excel كبير يحتوي بيانات حساسة؟</h4>
+                        <p>
+                            <strong>✅ الجواب:</strong>
+                            1) حامية الملف بكلمة مرور<br>
+                            2) وضعه في المجلد المشترك<br>
+                            3)إعلام المستلم بمكان الملف وكلمة السر المستخدمة في حماية الملف .<br>
+                            4) حذفه فوراً بعد التأكيد
+                        </p>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>❓ س6: من أتصل به في حال وجود مشكلة تقنية؟</h4>
+                        <p><strong>✅ الجواب:</strong> فرع تقنية المعلومات والدعم الفني - تحويلة: 2024 - 3232 - 3109 </p>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>❓ س7: هل يمكنني الوصول للمجلد من خارج الأكاديمية؟</h4>
+                        <p><strong>✅ الجواب:</strong> لا يمكنك الوصول للملف المشترك من خارج شبكة الأكاديمية</p>
+                    </div>
+                </div>
+
+                <div class="alert alert-info">
+                    <div class="alert-title">💡 نصيحة</div>
+                    إذا لم تجد إجابة لسؤالك هنا، لا تتردد في التواصل مع فريق الدعم التقني!
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Quiz -->
+        <section class="section" data-section="6">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-icon">🎯</div>
+                <div class="section-title-group">
+                    <h2>اختبار التقييم النهائي</h2>
+                    <p class="section-subtitle">اختبر معلوماتك واحصل على شهادة إتمام</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="alert alert-info">
+                    <div class="alert-title">📝 تعليمات الاختبار</div>
+                    <ul>
+                        <li>✓ عدد الأسئلة: 12 سؤالاً</li>
+                        <li>✓ النجاح: 80% فأعلى (10 إجابة صحيحة)</li>
+                        <li>✓ يمكنك إعادة الاختبار عدة مرات</li>
+                        <!--<li>✓ ستحصل على شهادة إتمام عند النجاح</li>-->
+                    </ul>
+                </div>
+
+                <div class="quiz-container" id="quizContainer">
+                    <!-- Quiz questions will be generated by JavaScript -->
+                </div>
+
+                <button class="quiz-submit" id="submitQuiz" style="display: none;" onclick="submitQuiz()">
+                    ✅ تقديم الإجابات
+                </button>
+
+                <div id="quizResult" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- Section 7: Resources -->
+        <section class="section" data-section="7">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-icon">📥</div>
+                <div class="section-title-group">
+                    <h2>الموارد والتحميلات</h2>
+                    <p class="section-subtitle">مواد إضافية ومراجع مفيدة</p>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="resources-grid">
+                    <div class="resource-card" onclick="window.location.href='password_protection_guide.html'" style="background: linear-gradient(135deg, var(--gold) 0%, #b8941f 100%); color: white; cursor: pointer;">
+                        <div class="resource-icon">🔐</div>
+                        <div class="resource-title">دليل حماية الملفات</div>
+                        <div class="resource-description">شرح مفصل لحماية Word وExcel وPDF بكلمات مرور</div>
+                    </div>
+
+                    <div class="resource-card" onclick="alert('سيتم توفير الملف قريباً')">
+                        <div class="resource-icon">📄</div>
+                        <div class="resource-title">الدليل الإرشادي PDF</div>
+                        <div class="resource-description">نسخة قابلة للطباعة من جميع التعليمات</div>
+                    </div>
+
+                    <div class="resource-card" onclick="alert('سيتم توفير الملف قريباً')">
+                        <div class="resource-icon">📋</div>
+                        <div class="resource-title">ورقة المرجع السريع</div>
+                        <div class="resource-description">ملخص صفحة واحدة للنقاط الأساسية</div>
+                    </div>
+
+                    <div class="resource-card" onclick="alert('سيتم توفير الفيديو قريباً')">
+                        <div class="resource-icon">🎥</div>
+                        <div class="resource-title">فيديو توضيحي</div>
+                        <div class="resource-description">شرح مصور لخطوات العمل</div>
+                    </div>
+
+                    <div class="resource-card" onclick="window.print()">
+                        <div class="resource-icon">🖨️</div>
+                        <div class="resource-title">طباعة الصفحة</div>
+                        <div class="resource-description">طباعة هذا المرجع التفاعلي</div>
+                    </div>
+
+                    <div class="resource-card" <!--onclick="alert('البريد: rap@interior.gov.bh\nالهاتف: 17840078')"-->>
+                        <div class="resource-icon">📞</div>
+                        <div class="resource-title">الدعم التقني</div>
+                        <div class="resource-description">تواصل مع فريق الدعم الفني 2024 - 3234 - 3109</div>
+                    </div>
+
+                    <div class="resource-card" onclick="resetProgress()">
+                        <div class="resource-icon">🔄</div>
+                        <div class="resource-title">إعادة البدء</div>
+                        <div class="resource-description">مسح التقدم والبدء من جديد</div>
+                    </div>
+                </div>
+
+                <div class="alert alert-success mt-4">
+                    <div class="alert-title">🎓 تهانينا!</div>
+                    <p>بإكمالك لهذا المرجع التفاعلي، أصبحت الآن على دراية كاملة بكيفية استخدام المجلد الإلكتروني المشترك بشكل آمن وفعال.</p>
+                    <p><strong>تذكر دائماً:</strong> المجلد المشترك = محطة عبور، ليس مستودع تخزين!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button class="nav-button" onclick="scrollToTop()">⬆️ العودة للأعلى</button>
+            <button class="nav-button" onclick="openSection(6)">🎯 الذهاب للاختبار</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 style="margin-bottom: 1rem; color: var(--gold);">الأكاديمية الملكية للشرطة</h3>
+            <p style="margin-bottom: 1rem;">فرع تقنية المعلومات والدعم الفني </p>
+            <div class="footer-links">
+                <!--<a href="mailto:rap@interior.gov.bh" class="footer-link">📧 rap@interior.gov.bh</a>-->
+                <a href="" class="footer-link">📞 3109 - 2024 - 3234</a>
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">
+                © 2026 جميع الحقوق محفوظة | تم التطوير بواسطة فرع تقنية المعلومات والدعم الفني
+            </p>
+        </div>
+    </footer>
+
+    <script>// Quiz Data
+        const quizQuestions = [
+            {
+                question: "ما هو الغرض الأساسي من المجلد الإلكتروني المشترك؟",
+                options: [
+                    "تخزين الملفات الشخصية للموظفين",
+                    "نقل الملفات بين الكيانات المختلفة",
+                    "عمل نسخ احتياطية للبيانات",
+                    "تخزين الملفات الدائم"
+                ],
+                correct: 1
+            },
+            {
+                question: "ماذا يجب فعله بالملف بعد تأكيد استلامه من الطرف الآخر؟",
+                options: [
+                    "الاحتفاظ به في المجلد للمراجعة المستقبلية",
+                    "نقله إلى مجلد آخر",
+                    "حذفه فوراً من المجلد المشترك",
+                    "تركه لمدة شهر ثم حذفه"
+                ],
+                correct: 2
+            },
+            {
+                question: "ما هي القاعدة الأساسية عند التعامل مع الملفات السرية؟",
+                options: [
+                    "رفعها مباشرة بدون تشفير",
+                    "حمايتها بكلمة مررو وأبلاغ المستلم بكلمة المرور",
+                    "عدم استخدام المجلد المشترك أبداً",
+                    "مشاركتها مع جميع الموظفين"
+                ],
+                correct: 1
+            },
+            {
+                question: "من المسؤول عن سلامة الملفات في جهازك الشخصي؟",
+                options: [
+                    "فرع تقنية المعلومات والدعم الفني",
+                    "مدير القسم",
+                    "أنت شخصياً",
+                    "الضابط المرجع"
+                ],
+                correct: 2
+            },
+            {
+                question: "ماذا يعني مبدأ 'Need To Know'؟",
+                options: [
+                    "الجميع يحتاج معرفة كل شيء",
+                    "فقط من يحتاج المعلومة لعمله يحصل عليها",
+                    "المديرون فقط يحصلون على المعلومات",
+                    "لا أحد يحتاج للمعلومات"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "ما هو الإجراء الصحيح عند نقل ملف؟",
+                options: [
+                    "نقله (Move) من جهازك إلى المجلد",
+                    "نسخه (Copy) إلى المجلد مع الاحتفاظ بنسخة أصلية",
+                    "حذفه من جهازك بعد رفعه",
+                    "إرساله عبر البريد الإلكتروني فقط"
+                ],
+                correct: 1
+            },
+            {
+                question: "ما هي المدة المقترحة كحد أقصى لبقاء الملف في المجلد؟",
+                options: [
+                    "3 أيام",
+                    "7 أيام (بدون سبب موثق)",
+                    "شهر كامل",
+                    "لا توجد مدة محددة"
+                ],
+                correct: 1
+            },
+            {
+                question: "أي من التالي يُعتبر مخالفة؟",
+                options: [
+                    "نقل تقرير عمل رسمي",
+                    "مشاركة جدول تدريبي",
+                    "حفظ صور شخصية في المجلد",
+                    "إعلام المستلم بالملف"
+                ],
+                correct: 2
+            },
+            {
+                question: "ما هو التصرف الصحيح عند الشك في سرية معلومة؟",
+                options: [
+                    "مشاركتها مباشرة",
+                    "تجاهل الأمر",
+                    "سؤال مسؤولك المباشر",
+                    "رفعها بدون تشفير"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "من يتولى الإشراف العام على المجلد المشترك؟",
+                options: [
+                    "قيادة الاكاديمية",
+                    "فرع تقنية المعلومات والدعم الفني",
+                    "رئيس شعبة التعليم",
+                    " الكلية الملكية للشرطة"
+                ],
+                correct: 1
+            },
+            {
+                question: "هل يمكن فتح الملف مباشرة من المجلد المشترك؟",
+                options: [
+                    "نعم دائماً",
+                    "نعم، ولكن يفضل نسخه أولاً إلى جهازك",
+                    "فقط للملفات الصغيرة",
+                    "فقط للمديرين"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "أي من التالي يُعد استخداماً صحيحاً للمجلد المشترك؟",
+                options: [
+                    "حفظ نسخة احتياطية من ملفاتك الشخصية",
+                    "تخزين مكتبة الموسيقى الخاصة بك",
+                    "نقل تقرير من قسمك إلى قسم آخر وحذفه بعد الاستلام",
+                    "الاحتفاظ بجميع ملفات المشاريع القديمة"
+                ],
+                correct: 2
+            }
+        ];
+
+        // State Management
+        let userAnswers = {};
+        let sectionsCompleted = new Set();
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            generateQuiz();
+        });
+
+        // Start Learning
+        function startLearning() {
+            document.getElementById('landing').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Toggle Section
+        function toggleSection(header) {
+            const section = header.parentElement;
+            section.classList.toggle('active');
+
+            const sectionNum = section.dataset.section;
+            if (section.classList.contains('active')) {
+                sectionsCompleted.add(sectionNum);
+            }
+
+            updateProgress();
+            saveProgress();
+        }
+
+        // Open Specific Section
+        function openSection(num) {
+            const section = document.querySelector(`[data-section="${num}"]`);
+            if (section) {
+                section.classList.add('active');
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Update Progress
+        function updateProgress() {
+            const totalSections = 7;
+            const completed = sectionsCompleted.size;
+            const percentage = Math.round((completed / totalSections) * 100);
+
+            document.getElementById('progressPercentage').textContent = percentage + '%';
+            document.getElementById('progressFill').style.width = percentage + '%';
+        }
+
+        // Generate Quiz
+        function generateQuiz() {
+            const container = document.getElementById('quizContainer');
+            container.innerHTML = '';
+
+            quizQuestions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'quiz-question';
+                questionDiv.innerHTML = `
+                    <div class="question-text">
+                        <span class="question-number">${index + 1}</span>
+                        ${q.question}
+                    </div>
+                    <div class="quiz-options">
+                        ${q.options.map((option, i) => `
+                            <div class="quiz-option" data-question="${index}" data-option="${i}" onclick="selectOption(${index}, ${i})">
+                                ${option}
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                container.appendChild(questionDiv);
+            });
+
+            document.getElementById('submitQuiz').style.display = 'block';
+        }
+
+        // Select Option
+        function selectOption(questionIndex, optionIndex) {
+            // Remove previous selection from this question
+            document.querySelectorAll(`[data-question="${questionIndex}"]`).forEach(opt => {
+                opt.classList.remove('selected');
+            });
+
+            // Add new selection to the clicked option
+            const selectedOption = document.querySelector(`[data-question="${questionIndex}"][data-option="${optionIndex}"]`);
+            if (selectedOption) {
+                selectedOption.classList.add('selected');
+            }
+
+            // Store the answer
+            userAnswers[questionIndex] = optionIndex;
+        }
+
+        // Submit Quiz
+        function submitQuiz() {
+            if (Object.keys(userAnswers).length < quizQuestions.length) {
+                alert('⚠️ يرجى الإجابة على جميع الأسئلة قبل التقديم!');
+                return;
+            }
+
+            let correctCount = 0;
+
+            quizQuestions.forEach((q, index) => {
+                const userAnswer = userAnswers[index];
+                const isCorrect = userAnswer === q.correct;
+
+                if (isCorrect) correctCount++;
+
+                // Mark options
+                document.querySelectorAll(`[data-question="${index}"]`).forEach((opt, i) => {
+                    opt.classList.remove('selected');
+                    if (i === q.correct) {
+                        opt.classList.add('correct');
+                    } else if (i === userAnswer && !isCorrect) {
+                        opt.classList.add('wrong');
+                    }
+                });
+            });
+
+            const percentage = Math.round((correctCount / quizQuestions.length) * 100);
+            const passed = percentage >= 80;
+
+            showResult(correctCount, quizQuestions.length, percentage, passed);
+
+            document.getElementById('submitQuiz').style.display = 'none';
+        }
+
+        // Show Result
+        function showResult(correct, total, percentage, passed) {
+            const resultDiv = document.getElementById('quizResult');
+
+            if (passed) {
+                resultDiv.innerHTML = `
+                    <div class="quiz-result">
+                        <div class="result-score">${percentage}%</div>
+                        <div class="result-message">
+                            🎉 <strong>تهانينا! لقد نجحت في الاختبار</strong><br>
+                            أجبت بشكل صحيح على ${correct} من ${total} سؤالاً
+                        </div>
+                        <div class="certificate d-none">
+                            <div class="certificate-content">
+                                <div class="certificate-title">🏆 شهادة إتمام 🏆</div>
+                                <div class="certificate-text">
+                                    تشهد الأكاديمية الملكية للشرطة بأن
+                                </div>
+                                <div class="certificate-name">المتدرب/ة</div>
+                                <div class="certificate-text">
+                                    قد أتم/ت بنجاح البرنامج التدريبي<br>
+                                    <strong>"المجلد الإلكتروني المشترك"</strong><br>
+                                    بنسبة نجاح ${percentage}%
+                                </div>
+                                <div style="margin-top: 2rem; color: var(--text-secondary);">
+                                    التاريخ: ${new Date().toLocaleDateString('ar-BH')}<br>
+                                    مملكة البحرين - وزارة الداخلية
+                                </div>
+                            </div>
+                        </div>
+                        <button class="quiz-submit" onclick="retakeQuiz()">🔄 إعادة الاختبار</button>
+                        <button class="quiz-submit" onclick="window.print()" style="background: var(--gold); margin-right: 1rem;">🖨️ طباعة الشهادة</button>
+                    </div>
+                `;
+            } else {
+                resultDiv.innerHTML = `
+                    <div class="quiz-result">
+                        <div class="result-score" style="background: linear-gradient(135deg, var(--danger) 0%, #c0392b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">${percentage}%</div>
+                        <div class="result-message">
+                            😔 <strong>للأسف، لم تتمكن من اجتياز الاختبار</strong><br>
+                            أجبت بشكل صحيح على ${correct} من ${total} سؤالاً<br>
+                            النسبة المطلوبة للنجاح: 80% (12 إجابة صحيحة)
+                        </div>
+                        <div class="alert alert-warning">
+                            <div class="alert-title">💡 نصيحة</div>
+                            راجع المحتوى مرة أخرى وأعد المحاولة. يمكنك إعادة الاختبار عدة مرات!
+                        </div>
+                        <button class="quiz-submit" onclick="retakeQuiz()">🔄 إعادة المحاولة</button>
+                        <button class="quiz-submit" onclick="scrollToTop()" style="background: var(--info); margin-right: 1rem;">📚 مراجعة المحتوى</button>
+                    </div>
+                `;
+            }
+
+            resultDiv.style.display = 'block';
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Retake Quiz
+        function retakeQuiz() {
+            userAnswers = {};
+            document.getElementById('quizResult').style.display = 'none';
+
+            // Reset all options
+            document.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('selected', 'correct', 'wrong');
+            });
+
+            document.getElementById('submitQuiz').style.display = 'block';
+            document.getElementById('quizContainer').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Scroll to Top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Save Progress
+        function saveProgress() {
+            localStorage.setItem('sharedFolder_sectionsCompleted', JSON.stringify([...sectionsCompleted]));
+        }
+
+        // Load Progress
+        function loadProgress() {
+            const saved = localStorage.getItem('sharedFolder_sectionsCompleted');
+            if (saved) {
+                sectionsCompleted = new Set(JSON.parse(saved));
+                updateProgress();
+            }
+        }
+
+        // Reset Progress
+        function resetProgress() {
+            if (confirm('هل أنت متأكد من رغبتك في مسح جميع التقدم والبدء من جديد؟')) {
+                localStorage.removeItem('sharedFolder_sectionsCompleted');
+                sectionsCompleted = new Set();
+                updateProgress();
+                location.reload();
+            }
+        }
+
+        // Auto-save on section interaction
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.section-header')) {
+                setTimeout(saveProgress, 500);
+            }
+        });</script>
+</body>
+</html>
